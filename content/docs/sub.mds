@@ -1,0 +1,47 @@
+Ez egy angol szótanuló alkalmazás magyaroknak. Szeretném elkészíteni hozzá fejezetekben a help-fájlt. A fájlok egy automatizált weboldalon mdx (markdown) fájlokból állnak, amelyeknek van egy fejléce. A fejléceket, amelyek alapján az egész helpet el kell készíteni az instrukciók végén találod.
+
+1. Nézd át az egész alkalmazást (csak a ts és a tsx fájlokat) és értsd meg, mit csinál az app.
+2. Olvasd el a https://szokincsaktivator.hu eladási oldalt, hogy lásd, mire koncentrálunk.
+3. Hozd létre az egyéni help fájlokat az alábbi fejlécek alapján:
+    a) a fájlokat az src/mainhelp folderben hozd létre.
+    b) az egyes fájlok neve <topicSlug>.mdx legyen.
+    c) a fájl elején a fejléc álljon, a fejléc előtti sorban --- (három kötőjel legyen) és a fejléc utáni sorban is --- álljon.
+    d) Ezt kövesse az adott fejezet leírása a program alapján,  tegezve, jól érthetően, markdown formátumban. Használj címformátumot, boldokat ha kell, és így tovább. Válaszolj meg minden kérdést. Ahol lehet, emeld ki, hogy miért is csináljuk ezt, és miért működik felhasználva a weboldalban írtakat is.
+    e) Használj barátságos, világos stílust, magyarázz el mindent, amit kell.
+
+Megjegyzések:
+Az új szavak hozzáadásánál vedd végig az összes módszert, ami az activator.tsx-ben található
+
+Az alábbiakban láthatók az egyes mdx fájlok fejlécei:
+
+
+---
+title: "Mire jó a SzókincsAktivátor?"
+summary: "A szótanulás alapjai és a SzókincsAktivátor"
+topicTitle: "Mire jó a SzókincsAktivátor"
+topicSlug: "introduction"
+nextTitle: "Belépés a SzókincsAktivátorba"
+nextSlug: "/documentation/access"
+---
+title: "Új szavak hozzáadása"
+summary: "Milyen módokon adhatunk hozzá megtanulandó szavakat a szótárfüzetünkhöz"
+topicTitle: "Új szavak hozzáadása"
+topicSlug: "newwords"
+nextTitle: "Tanulás a SzókincsAktivátorral"
+nextSlug: "/documentation/study"
+---
+title: "Tanulás a SzókincsAktivátorral"
+summary: "Hogyan tanuljuk meg a szavakat?"
+topicTitle: "Tanulás a SzókincsAktivátorral"
+topicSlug: "study"
+nextTitle: "Haladás"
+nextSlug: "/documentation/progress"
+---
+title: "Haladás"
+summary: "Hogyan követhetjük a haladásunkat?"
+topicTitle: "Haladás"
+topicSlug: "progress"
+---
+
+
+
