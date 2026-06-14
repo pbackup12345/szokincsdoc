@@ -1,5 +1,6 @@
 import React from "react";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { evaluate } from "@mdx-js/mdx";
+import * as runtime from "react/jsx-runtime";
 import PostLink from './link'
 import PostImage from './image'
 import PostBanner from './banner'
@@ -59,7 +60,8 @@ const mdxComponents = {
   Td: TableTd,
 };
 
-export function CustomMDX(props: any) {
+export async function CustomMDX(props: any) {
+  const { source, components, ...restProps } = props;
   const rehypePrettyCodeOptions = {
     theme: "one-dark-pro",
     keepBackground: false,
@@ -80,15 +82,16 @@ export function CustomMDX(props: any) {
     },
   };
 
+  const { default: MDXContent } = await evaluate(source, {
+    ...runtime,
+    development: false,
+    rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
+  });
+
   return (
-    <MDXRemote
-      {...props}
-      components={{ ...mdxComponents, ...(props.components || {}) }}
-      options={{
-        mdxOptions: {
-          rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
-        },
-      }}
+    <MDXContent
+      {...restProps}
+      components={{ ...mdxComponents, ...(components || {}) }}
     />
   );
 }
